@@ -1,0 +1,143 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 2,
+    "pending": 0,
+    "failures": 1,
+    "start": "2023-05-03T18:13:28.061Z",
+    "end": "2023-05-03T18:14:33.081Z",
+    "duration": 65020,
+    "testsRegistered": 3,
+    "passPercent": 66.66666666666666,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "9320ea1d-aecd-4524-bf4e-e39e92a4cc83",
+      "title": "",
+      "fullFile": "cypress\\e2e\\nudeNude.cy.js",
+      "file": "cypress\\e2e\\nudeNude.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "3bbc6def-457e-4ce1-a354-70045f347c56",
+          "title": "Bralette Bundle Black + Black ",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Should have Subtitle: EBY Seamless Nude Bralette Bundle",
+              "fullTitle": "Bralette Bundle Black + Black  Should have Subtitle: EBY Seamless Nude Bralette Bundle",
+              "timedOut": null,
+              "duration": 30275,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(\".mobile-intro .subtitle h1\").contains('EBY Seamless Nude Bralette Bundle ');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find content: 'EBY Seamless Nude Bralette Bundle ' within the element: <h1> but never did.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find content: 'EBY Seamless Nude Bralette Bundle ' within the element: <h1> but never did.\n    at Context.eval (webpack:///./cypress/e2e/nudeNude.cy.js:22:7)",
+                "diff": null
+              },
+              "uuid": "a25b1019-a233-4d70-ac29-f39406b0d610",
+              "parentUUID": "3bbc6def-457e-4ce1-a354-70045f347c56",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Should have Title: Bralette Bundle",
+              "fullTitle": "Bralette Bundle Black + Black  Should have Title: Bralette Bundle",
+              "timedOut": null,
+              "duration": 18094,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(\".mobile-intro h2.product-name\").contains('Bralette Bundle');",
+              "err": {},
+              "uuid": "98b81e81-423f-4d85-908e-e6c77cdfb059",
+              "parentUUID": "3bbc6def-457e-4ce1-a354-70045f347c56",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Should have Price of $94 in red and $112 in gray \n Should have $94 in ADD TO CART",
+              "fullTitle": "Bralette Bundle Black + Black  Should have Price of $94 in red and $112 in gray \n Should have $94 in ADD TO CART",
+              "timedOut": null,
+              "duration": 16508,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(\".mobile-intro .nrml-price23\").should($el => {\n  const element = $el[0];\n  const computedStyle = getComputedStyle(element);\n  expect($el).contain('$94'); // Check if the color is red\n  expect(computedStyle.color).to.equal('rgb(208, 2, 27)');\n});\ncy.get(\".mobile-intro .isBundleBraExtra23\").should($el => {\n  const element = $el[0];\n  const computedStyle = getComputedStyle(element);\n  expect($el).contain('$112'); // Check if the color is red\n  expect(computedStyle.color).to.equal('rgb(127, 131, 151)'); // Check if the text-decoration includes a line-through style\n  expect(computedStyle.textDecoration).to.include('line-through');\n});\ncy.get(\"#total-pdp-rby\").contains('$94');",
+              "err": {},
+              "uuid": "1163d0a5-8b6f-4c98-807f-06275a8ecc31",
+              "parentUUID": "3bbc6def-457e-4ce1-a354-70045f347c56",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "98b81e81-423f-4d85-908e-e6c77cdfb059",
+            "1163d0a5-8b6f-4c98-807f-06275a8ecc31"
+          ],
+          "failures": [
+            "a25b1019-a233-4d70-ac29-f39406b0d610"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 64877,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": null,
+      "version": "6.2.0"
+    }
+  }
+}
