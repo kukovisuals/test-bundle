@@ -17,8 +17,6 @@ describe(`Bralette Bundle Black + Black `, () => {
     cy.visit('/products/black-bralette-bundle');
   });
 
-
-  /*
   it(`Should have Subtitle: EBY Seamless Black Bralette Bundle`, () => {
     cy.get(".mobile-intro .subtitle h1")
       .contains('EBY Seamless Black Bralette Bundle')
@@ -52,13 +50,12 @@ describe(`Bralette Bundle Black + Black `, () => {
     cy.get("#total-pdp-rby")
       .contains('$94')
   });
+  /*
    *****************************************************************
    * Test Add to cart
    ***************************************************************** 
   */
-  
 
-  /*
   it(`Adds the bundle to the cart, checks title, variant, qty, savings`, () => {
     const variant = ['xs','sm','md','lg','xl','xsdd','xdd','sdd','mdd','ldd','xldd'];
 
@@ -71,6 +68,8 @@ describe(`Bralette Bundle Black + Black `, () => {
     cy.get('.onetimeTitle.prod_line').eq(0).contains('Seamless');
     cy.get('.variant-cart-sel').eq(0).contains(variant[0]);
   });
+
+  /*
    *****************************************************************
    * Desktop
    ***************************************************************** 
@@ -128,7 +127,6 @@ describe(`Bralette Bundle Black + Black `, () => {
     cy.get('#AddToCart').click();
     cy.wait(5000);
     cy.get('.eby-nav-laptop .jsDrawerOpenRight').click();
-    cy.wait(6000);
     cy.get('.onetimeTitle.prod_line').eq(0).contains('Seamless');
     cy.get('.variant-cart-sel').eq(0).contains(variant[0]);
   });
