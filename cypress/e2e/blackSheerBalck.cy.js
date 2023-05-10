@@ -57,9 +57,9 @@ describe(`Bralette Bundle Black Sheer + Black `, () => {
    * Test Add to cart
    ***************************************************************** 
   */
+  const variant = ['xs','sm','md','lg','xl','sdd','mdd','ldd'];
 
-  it(`Adds the bundle to the cart, checks title, variant, qty, savings`, () => {
-    const variant = ['xs','sm','md','lg','xl','xsdd','xdd','sdd','mdd','ldd','xldd'];
+  it(`Adds the bundle to the cart, checks title, variant ${variant[0]}, qty, savings`, () => {
     let index = 0;
 
     cy.get(`.js-swatch .swatch-element.${variant[0]}`).click();
@@ -168,13 +168,45 @@ describe(`Bralette Bundle Black Sheer + Black `, () => {
         expect(textContent).to.include('$47');
       });
   });
+  
+  for (let sizeVariant = 1; sizeVariant < variant.length; sizeVariant++) {
 
+    it(`Adds the bundle to the cart, variant ${variant[sizeVariant]}`, () => {
+      
+      let index = 0;
+
+      cy.get(`.js-swatch .swatch-element.${variant[sizeVariant]}`).click();
+      // Click the "Add to cart" button
+      cy.get('#AddToCart').click();
+      cy.wait(5000);
+      cy.get('.eby-mobile-nav .jsDrawerOpenRight').click();
+      //variant
+      cy.get('.variant-cart-sel').eq(index)
+        .should(($el) => {
+          const textContent = $el.text();
+          expect(textContent).to.include(variant[sizeVariant]);
+        });
+      // qnty 
+      cy.get('.velaQty .qtyNum').eq(index)
+        .should('have.value', '1');
+      // ------------- 2nd item ------------------------------------
+      index = 1
+      //variant
+      cy.get('.variant-cart-sel').eq(index)
+        .should(($el) => {
+          const textContent = $el.text();
+          expect(textContent).to.include(variant[sizeVariant]);
+        });
+      // qnty 
+      cy.get('.velaQty .qtyNum').eq(index)
+        .should('have.value', '1');
+    })
+  }
   /*
    *****************************************************************
    * Desktop
    ***************************************************************** 
   */
-
   it(`Should have Subtitle: ${subtitle}`, () => {
     cy.viewport(1366, 768);
     cy.get(".eby-title-block-pdp-2022 .subtitle h3")
@@ -330,4 +362,39 @@ describe(`Bralette Bundle Black Sheer + Black `, () => {
       });
   });
   
+  for (let sizeVariant = 1; sizeVariant < variant.length; sizeVariant++) {
+
+    it(`Adds the bundle to the cart, variant ${variant[sizeVariant]}`, () => {
+      
+      cy.viewport(1366, 768);
+      
+      let index = 0;
+
+      cy.get(`.js-swatch .swatch-element.${variant[sizeVariant]}`).click();
+      // Click the "Add to cart" button
+      cy.get('#AddToCart').click();
+      cy.wait(5000);
+      cy.get('.eby-nav-laptop .jsDrawerOpenRight').click();
+      //variant
+      cy.get('.variant-cart-sel').eq(index)
+        .should(($el) => {
+          const textContent = $el.text();
+          expect(textContent).to.include(variant[sizeVariant]);
+        });
+      // qnty 
+      cy.get('.velaQty .qtyNum').eq(index)
+        .should('have.value', '1');
+      // ------------- 2nd item ------------------------------------
+      index = 1
+      //variant
+      cy.get('.variant-cart-sel').eq(index)
+        .should(($el) => {
+          const textContent = $el.text();
+          expect(textContent).to.include(variant[sizeVariant]);
+        });
+      // qnty 
+      cy.get('.velaQty .qtyNum').eq(index)
+        .should('have.value', '1');
+    })
+  }
 });
