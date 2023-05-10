@@ -12,14 +12,16 @@
     ************************************
 */
 
-describe(`Bralette Bundle Black + Black `, () => {
+const subtitle = "EBY seamless bralette bundle black sheer and nude";
+
+describe(`Bralette Bundle Black Sheer + Nude `, () => {
   beforeEach(() => {
-    cy.visit('/products/black-bralette-bundle');
+    cy.visit('/products/bralette-bundle-black-sheer-and-nude');
   });
 
-  it(`Should have Subtitle: EBY Seamless Black Bralette Bundle`, () => {
+  it(`Should have Subtitle: ${subtitle}`, () => {
     cy.get(".mobile-intro .subtitle h1")
-      .contains('EBY Seamless Black Bralette Bundle')
+      .contains(subtitle);
   });
 
   it(`Should have Title: Bralette Bundle`, () => {
@@ -75,12 +77,12 @@ describe(`Bralette Bundle Black + Black `, () => {
    ***************************************************************** 
   */
 
-  it(`Should have Subtitle: EBY Seamless Black Bralette Bundle`, () => {
+  it(`Should have Subtitle: ${subtitle}`, () => {
     cy.viewport(1366, 768);
     cy.get(".eby-title-block-pdp-2022 .subtitle h3")
       .should(($el) => {
         const textContent = $el.text();
-        expect(textContent).to.include('EBY Seamless Black Bralette Bundle');
+        expect(textContent).to.include(subtitle);
       });
   });
 
