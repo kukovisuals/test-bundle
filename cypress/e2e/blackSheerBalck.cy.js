@@ -89,7 +89,7 @@ describe(`Bralette Bundle Black Sheer + Black `, () => {
     cy.get('.onetimeTitle.prod_color').eq(index)
       .should(($el) => {
         const textContent = $el.text();
-        expect(textContent).to.include('Nude');
+        expect(textContent).to.include('Black');
       });
     // qnty 
     cy.get('.velaQty .qtyNum').eq(index)
@@ -103,13 +103,13 @@ describe(`Bralette Bundle Black Sheer + Black `, () => {
     cy.get('.prodItem-promoSummaryCopy span').eq(index)
       .should(($el) => {
         const textContent = $el.text();
-        expect(textContent).to.include('(-$9)');
+        expect(textContent).to.include('(-$3)');
       });
     //price discount
     cy.get('.strikethrough-price .bfx-old-price.bfx-price').eq(index)
       .should(($el) => {
         const textContent = $el.text();
-        expect(textContent).to.include('$56');
+        expect(textContent).to.include('$50');
       });
     cy.get('.has-discount.bfx-product-subtotal.bfx-price').eq(index)
       .should(($el) => {
@@ -221,7 +221,7 @@ describe(`Bralette Bundle Black Sheer + Black `, () => {
   it(`Adds the bundle to the cart, checks title, variant, qty, savings`, () => {
     cy.viewport(1366, 768);
     const variant = ['xs','sm','md','lg','xl','xsdd','xdd','sdd','mdd','ldd','xldd'];
-    const index = 0;
+    let index = 0;
 
     cy.get(`.js-swatch .swatch-element.${variant[0]}`).click();
     // Click the "Add to cart" button
@@ -264,13 +264,13 @@ describe(`Bralette Bundle Black Sheer + Black `, () => {
     cy.get('.prodItem-promoSummaryCopy span').eq(index)
       .should(($el) => {
         const textContent = $el.text();
-        expect(textContent).to.include('(-$9)');
+        expect(textContent).to.include('(-$3)');
       });
     //price discount
     cy.get('.strikethrough-price .bfx-old-price.bfx-price').eq(index)
       .should(($el) => {
         const textContent = $el.text();
-        expect(textContent).to.include('$56');
+        expect(textContent).to.include('$50');
       });
     cy.get('.has-discount.bfx-product-subtotal.bfx-price').eq(index)
       .should(($el) => {

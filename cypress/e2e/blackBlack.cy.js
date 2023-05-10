@@ -57,8 +57,9 @@ describe(`Bralette Bundle Black + Black `, () => {
    ***************************************************************** 
   */
 
-  it(`Adds the bundle to the cart, checks title, variant, qty, savings`, () => {
-    const variant = ['xs','sm','md','lg','xl','xsdd','xdd','sdd','mdd','ldd','xldd'];
+ 
+ it(`Adds the bundle to the cart, checks title, variant, qty, savings`, () => {
+   const variant = ['xs','sm','md','lg','xl','xsdd','xdd','sdd','mdd','ldd','xldd'];
 
     cy.get(`.js-swatch .swatch-element.${variant[0]}`).click();
     // Click the "Add to cart" button
@@ -110,6 +111,7 @@ describe(`Bralette Bundle Black + Black `, () => {
       });
     
   });
+
 
   /*
    *****************************************************************

@@ -67,8 +67,48 @@ describe(`Bralette Bundle Black + Nude `, () => {
     cy.wait(1000);
     cy.get('.eby-mobile-nav .jsDrawerOpenRight').click();
     cy.wait(5000);
-    cy.get('.onetimeTitle.prod_line').eq(0).contains('Seamless');
-    cy.get('.variant-cart-sel').eq(0).contains(variant[0]);
+    cy.get('.onetimeTitle.prod_line').eq(0)
+      .should(($el) => {
+        const textContent = $el.text();
+        expect(textContent).to.include('Seamless');
+      });
+    // tittle
+    cy.get('.onetimeTitle.prod_style a').eq(0)
+    .should(($el) => {
+        const textContent = $el.text();
+        expect(textContent).to.include('Bralette');
+      });
+    //variant
+    cy.get('.variant-cart-sel').eq(0)
+      .should(($el) => {
+        const textContent = $el.text();
+        expect(textContent).to.include(variant[0]);
+      });
+    // qnty 
+    cy.get('.velaQty .qtyNum').eq(0)
+      .should('have.value', '2');
+    // savings
+    cy.get('.prodItem-promoSummaryCopy').eq(0)
+      .should(($el) => {
+          const textContent = $el.text();
+          expect(textContent).to.include(' Part of Bralette Bundle ');
+        });
+    cy.get('.prodItem-promoSummaryCopy span').eq(0)
+      .should(($el) => {
+        const textContent = $el.text();
+        expect(textContent).to.include('(-$18)');
+      });
+    //price discount
+    cy.get('.strikethrough-price .bfx-old-price.bfx-price').eq(0)
+      .should(($el) => {
+        const textContent = $el.text();
+        expect(textContent).to.include('$112');
+      });
+    cy.get('.has-discount.bfx-product-subtotal.bfx-price').eq(0)
+      .should(($el) => {
+        const textContent = $el.text();
+        expect(textContent).to.include('$94');
+      });
   });
 
   /*
@@ -129,8 +169,48 @@ describe(`Bralette Bundle Black + Nude `, () => {
     cy.get('#AddToCart').click();
     cy.wait(5000);
     cy.get('.eby-nav-laptop .jsDrawerOpenRight').click();
-    cy.get('.onetimeTitle.prod_line').eq(0).contains('Seamless');
-    cy.get('.variant-cart-sel').eq(0).contains(variant[0]);
+    cy.get('.onetimeTitle.prod_line').eq(0)
+      .should(($el) => {
+        const textContent = $el.text();
+        expect(textContent).to.include('Seamless');
+      });
+    // tittle
+    cy.get('.onetimeTitle.prod_style a').eq(0)
+    .should(($el) => {
+        const textContent = $el.text();
+        expect(textContent).to.include('Bralette');
+      });
+    //variant
+    cy.get('.variant-cart-sel').eq(0)
+      .should(($el) => {
+        const textContent = $el.text();
+        expect(textContent).to.include(variant[0]);
+      });
+    // qnty 
+    cy.get('.velaQty .qtyNum').eq(0)
+      .should('have.value', '2');
+    // savings
+    cy.get('.prodItem-promoSummaryCopy').eq(0)
+      .should(($el) => {
+          const textContent = $el.text();
+          expect(textContent).to.include(' Part of Bralette Bundle ');
+        });
+    cy.get('.prodItem-promoSummaryCopy span').eq(0)
+      .should(($el) => {
+        const textContent = $el.text();
+        expect(textContent).to.include('(-$18)');
+      });
+    //price discount
+    cy.get('.strikethrough-price .bfx-old-price.bfx-price').eq(0)
+      .should(($el) => {
+        const textContent = $el.text();
+        expect(textContent).to.include('$112');
+      });
+    cy.get('.has-discount.bfx-product-subtotal.bfx-price').eq(0)
+      .should(($el) => {
+        const textContent = $el.text();
+        expect(textContent).to.include('$94');
+      });
   });
   
 });
