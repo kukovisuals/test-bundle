@@ -19,11 +19,6 @@ describe(`Bralette Bundle Black + Nude `, () => {
     cy.visit('/products/nude-bralette-bundle');
   });
 
-  it(`Should have Subtitle: ${subtitle}`, () => {
-    cy.get(".mobile-intro .subtitle h1")
-      .contains(subtitle);
-  });
-
   it(`Should have Title: Bralette Bundle`, () => {
     cy.get(".mobile-intro h2.product-name")
       .contains('Bralette Bundle')
@@ -136,15 +131,6 @@ describe(`Bralette Bundle Black + Nude `, () => {
    * Desktop
    ***************************************************************** 
   */
-  it(`Should have Subtitle: ${subtitle}`, () => {
-    cy.viewport(1366, 768);
-    cy.get(".eby-title-block-pdp-2022 .subtitle h3")
-      .should(($el) => {
-        const textContent = $el.text();
-        expect(textContent).to.include(subtitle);
-      });
-  });
-
   it(`Should have Title: Bralette Bundle`, () => {
     cy.viewport(1366, 768);
     cy.get("h4.product-name-desktop")

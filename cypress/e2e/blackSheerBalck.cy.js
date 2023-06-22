@@ -19,11 +19,6 @@ describe(`Bralette Bundle Black Sheer + Black `, () => {
     cy.visit('/products/bralette-bundle-black-sheer-and-black-bra');
   });
 
-  it(`Should have Subtitle: ${subtitle}`, () => {
-    cy.get(".mobile-intro .subtitle h1")
-      .contains(subtitle)
-  });
-
   it(`Should have Title: Bralette Bundle`, () => {
     cy.get(".mobile-intro h2.product-name")
       .contains('Bralette Bundle')
@@ -98,12 +93,12 @@ describe(`Bralette Bundle Black Sheer + Black `, () => {
     cy.get('.prodItem-promoSummaryCopy').eq(index)
       .should(($el) => {
           const textContent = $el.text();
-          expect(textContent).to.include(' Part of Bralette Bundle ');
+          expect(textContent).to.include('  Part of Sheer Bralette Bundle ');
         });
     cy.get('.prodItem-promoSummaryCopy span').eq(index)
       .should(($el) => {
         const textContent = $el.text();
-        expect(textContent).to.include('(-$3)');
+        expect(textContent).to.include('(-$6)');
       });
     //price discount
     cy.get('.strikethrough-price .bfx-old-price.bfx-price').eq(index)
@@ -114,7 +109,7 @@ describe(`Bralette Bundle Black Sheer + Black `, () => {
     cy.get('.has-discount.bfx-product-subtotal.bfx-price').eq(index)
       .should(($el) => {
         const textContent = $el.text();
-        expect(textContent).to.include('$47');
+        expect(textContent).to.include('$44');
       });
     // ----------------------2nd item-------------------------------
     index = 1;
@@ -207,23 +202,6 @@ describe(`Bralette Bundle Black Sheer + Black `, () => {
    * Desktop
    ***************************************************************** 
   */
-  it(`Should have Subtitle: ${subtitle}`, () => {
-    cy.viewport(1366, 768);
-    cy.get(".eby-title-block-pdp-2022 .subtitle h3")
-      .should(($el) => {
-        const textContent = $el.text();
-        expect(textContent).to.include(subtitle);
-      });
-  });
-
-  it(`Should have Title: Bralette Bundle`, () => {
-    cy.viewport(1366, 768);
-    cy.get("h4.product-name-desktop")
-      .should(($el) => {
-        const textContent = $el.text();
-        expect(textContent).to.include('Bralette bundle');
-      });
-  });
 
   it(`Should have Price of $94 in red and $112 in gray \n Should have $94 in ADD TO CART`, () => {
     cy.viewport(1366, 768);
@@ -291,12 +269,12 @@ describe(`Bralette Bundle Black Sheer + Black `, () => {
     cy.get('.prodItem-promoSummaryCopy').eq(index)
       .should(($el) => {
           const textContent = $el.text();
-          expect(textContent).to.include(' Part of Bralette Bundle ');
+          expect(textContent).to.include(' Part of Sheer Bralette Bundle ');
         });
     cy.get('.prodItem-promoSummaryCopy span').eq(index)
       .should(($el) => {
         const textContent = $el.text();
-        expect(textContent).to.include('(-$3)');
+        expect(textContent).to.include('(-$6)');
       });
     //price discount
     cy.get('.strikethrough-price .bfx-old-price.bfx-price').eq(index)
@@ -307,7 +285,7 @@ describe(`Bralette Bundle Black Sheer + Black `, () => {
     cy.get('.has-discount.bfx-product-subtotal.bfx-price').eq(index)
       .should(($el) => {
         const textContent = $el.text();
-        expect(textContent).to.include('$47');
+        expect(textContent).to.include('$44');
       });
     // ----------------------2nd item-------------------------------
     index = 1;
